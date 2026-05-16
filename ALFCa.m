@@ -1,0 +1,18 @@
+clear all;
+disp('SINGLE AREA UNCONTROLLED');
+Pd = input('Enter the change in load ');
+Tt = input('Enter the Turbine Time Constant ');
+Tg = input('Enter the Governor Time Constant ');
+H  = input('Enter the Governor Inertia Constant ');
+R  = input('Enter the Governor Speed Regulation ');
+D  = input('Enter the Damping Co-efficient ');
+f  = input('Enter the System Frequency ');
+Kp = (1/D);
+Tp = (2*H)/(f*D);
+fo = -(Pd)/(D + (1/R));
+f1 = (fo*f);
+fs = (f + f1);
+disp('Changing Static Frequency');
+disp(f1);
+disp('Static Frequency of System');
+disp(fs);

@@ -1,0 +1,17 @@
+clc;
+clear all;
+disp('determine per phase L and C');
+d=input('Enter the diameter in cm:');
+r=d/2;
+rad=r*10^(-2);
+Dab=input('Enter distance between conductor A and B in m:');
+Dbc=input('enter distance between conductor B and C in m:');
+Dca=input('enter distance between conductor C and A in m:');
+Deq=(Dab*Dbc*Dca)^(1/3);
+r1=rad*0.7788;
+L=2*10^(-7)*log(Deq/r1);
+C=(2*3.14*8.854*10^(-12))/(log(Deq/rad));
+disp('per phase inductance in (H/m)');
+disp(L);
+disp('per phase capacitance in (F/m)');
+disp(C);
